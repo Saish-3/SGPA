@@ -14,6 +14,7 @@ import { SummaryTable } from "./components/SummaryTable";
 import { StudyDrawer } from "./components/StudyDrawer";
 import { PrintRoot } from "./components/PrintRoot";
 import { Styles } from "./components/Styles";
+import { Watermark } from "./components/Watermark";
 
 /* ============================ App ============================ */
 export default function App() {
@@ -111,6 +112,7 @@ export default function App() {
       {wizard && <SubjectWizard onClose={() => setWizard(false)} onAdd={(s) => { setSubjects((p) => [...p, s]); setWizard(false); }} />}
       {drawer && <StudyDrawer topic={drawer.topic} subject={drawer.subject} onClose={() => setDrawer(null)} />}
       <PrintRoot topic={drawer?.topic} subject={drawer?.subject} plan={drawerPlan} />
+      <Watermark />
     </div>
   );
 }
